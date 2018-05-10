@@ -1,0 +1,131 @@
+<!-- <div class="example-header">
+<mat-form-field>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+</mat-form-field>
+</div> -->
+
+<div class="example-container mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort>
+
+  <ng-container matColumnDef="name" >
+      <th class="mat-header-row" mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+      <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="phone">
+    <th class="mat-header-row" mat-header-row mat-header-cell *matHeaderCellDef mat-sort-header> Phone </th>
+    <td mat-cell *matCellDef="let row"> {{row.phone}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="email">
+    <th class="mat-header-row" mat-header-row mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+    <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="company">
+    <th class="mat-header-row" mat-header-row mat-header-cell *matHeaderCellDef mat-sort-header> Company </th>
+    <td mat-cell *matCellDef="let row"> {{row.company}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="date_entry">
+    <th  class="mat-header-row" mat-header-row mat-header-cell *matHeaderCellDef mat-sort-header> Date Entry </th>
+    <td mat-cell *matCellDef="let row"> {{row.date_entry}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="org_num">
+    <th class="mat-header-row" mat-header-cell *matHeaderCellDef mat-sort-header> Org Num </th>
+    <td mat-cell *matCellDef="let row"> {{row.org_num}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="address_1">
+    <th class="mat-header-row" mat-header-cell *matHeaderCellDef mat-sort-header> Address </th>
+    <td mat-cell *matCellDef="let row"> {{row.address_1}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="city">
+    <th class="mat-header-row" mat-header-cell *matHeaderCellDef mat-sort-header> City </th>
+    <td mat-cell *matCellDef="let row"> {{row.city}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="zip">
+    <th class="mat-header-row" mat-header-cell *matHeaderCellDef mat-sort-header> Zip </th>
+    <td mat-cell *matCellDef="let row"> {{row.zip}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="geo">
+    <th class="mat-header-row" mat-header-cell *matHeaderCellDef mat-sort-header> Geo </th>
+    <td mat-cell *matCellDef="let row"> {{row.geo}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="pan">
+    <th class="mat-header-row" mat-header-cell *matHeaderCellDef mat-sort-header> Pan </th>
+    <td mat-cell *matCellDef="let row"> {{row.pan}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="pin">
+    <th class="mat-header-row" mat-header-cell *matHeaderCellDef mat-sort-header> Pin </th>
+    <td mat-cell *matCellDef="let row"> {{row.pin}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="id">
+    <th class="mat-header-row" mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
+    <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="status">
+    <th class="mat-header-row" mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+    <td mat-cell *matCellDef="let row"> {{row.status}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="fee">
+    <th class="mat-header-row" mat-header-cell *matHeaderCellDef mat-sort-header> Fee </th>
+    <td mat-cell *matCellDef="let row"> {{row.fee}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="guid">
+    <th class="mat-header-row" mat-header-cell *matHeaderCellDef mat-sort-header> Guid </th>
+    <td mat-cell *matCellDef="let row"> {{row.guid}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="date_exit">
+    <th class="mat-header-row" mat-header-cell *matHeaderCellDef mat-sort-header> Date Exit </th>
+    <td mat-cell *matCellDef="let row"> {{row.date_exit}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="date_first">
+    <th class="mat-header-row" mat-header-cell *matHeaderCellDef mat-sort-header> Date First </th>
+    <td mat-cell *matCellDef="let row"> {{row.date_first}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="date_recent">
+   <th class="mat-header-row" mat-header-cell *matHeaderCellDef mat-sort-header> Date Recent </th>
+    <td mat-cell *matCellDef="let row"> {{row.date_recent}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="url">
+    <th class="mat-header-row" mat-header-cell *matHeaderCellDef mat-sort-header> Url </th>
+    <td mat-cell  *matCellDef="let row"> {{row.url}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="submit">
+    <th class="mat-header-row" mat-header-cell *matHeaderCellDef>Submit </th>
+    <td mat-cell *matCellDef="let row" (click)="postRowId(row.id ,row.name)">
+        <button class="btn btn-outline-info  btn-primary">Click</button>
+    </td>
+  </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <div class="md-padding" *ngIf="!dataSource" layout="row" layout-align="center center">
+      <h3>No results to display.</h3>
+    </div>
+ 
+</div>
+<mat-paginator class="min-width sticky" [length]="length"
+[pageSize]="pageSize"
+[pageSizeOptions]="pageSizeOptions"
+(page)="pageEvent = loadData($event)"></mat-paginator>
+
+
+
