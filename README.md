@@ -8,7 +8,7 @@ Run `npm run api-server` to start a new express server to `localhost:3000`.All t
 
 ## Development server
 
-Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm start` for a dev server. Navigate to `http://localhost:4200/`.
 
 ## To Do
 1. Write test cases.
