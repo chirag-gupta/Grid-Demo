@@ -12,8 +12,7 @@ Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app 
 
 ## To Do
 1. Write test cases.
-2. Fix browsing issues in Chrome.It is working for Firefox and Edge.
-3. Implement the grid to be data independent.
+2. Implement the grid to be data independent.
 
 
 # Grid-Demo
