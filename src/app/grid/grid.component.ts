@@ -1,17 +1,15 @@
-import { Component, OnInit , ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit , ViewChild } from '@angular/core';
 import {MatPaginator, MatSort, MatTableDataSource, MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import {GridService} from '../shared/grid.service';
 import {DialogComponent} from '../dialog/dialog';
 import {UserData} from '../shared/userData';
 
-const NUMBER_FORMAT: (v: any) => any = (v: number) => v;
-const DECIMAL_FORMAT: (v: any) => any = (v: number) => v.toFixed(2);
 @Component({
   selector: 'app-grid',
   templateUrl: './grid.component.html',
   styleUrls: ['./grid.component.css']
 })
-export class GridComponent implements OnInit , AfterViewInit {
+export class GridComponent implements OnInit  {
 
   displayedColumns = [];
   dataSource: MatTableDataSource<UserData> = new MatTableDataSource<UserData>();
@@ -34,12 +32,6 @@ export class GridComponent implements OnInit , AfterViewInit {
 
   }
 
-  ngAfterViewInit() {
-    if (this.dataSource.data.length > 0) {
-      this.dataSource.sort = this.sort;
-    }
-}
-
 openDialog(msg: string): void {
   const dialogRef = this.dialog.open(DialogComponent, {
     width: '350px',
@@ -49,7 +41,6 @@ openDialog(msg: string): void {
   dialogRef.afterClosed().subscribe(result => {
   });
 }
-
 
   loadData() {
     if (this.displayedColumns ===  undefined || this.displayedColumns.length === 0) {
